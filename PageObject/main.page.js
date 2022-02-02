@@ -19,6 +19,9 @@ class MainPage extends BasePage {
     get myAccountIcon(){
         return new Button($('(//a[text()="My Account"])[1]'), "User's Account")
     }
+    get productPrice() {
+        return new BaseElement($('(//p[@class="price"])[5]'),"Searched item's price");
+    }
     //open home page
     async open() {
         await super.open(`https://www.bookdepository.com`);

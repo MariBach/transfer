@@ -24,6 +24,9 @@ export default class BaseElement {
     }
     async getText() {
         let innerText = await this.wdioElement.getText();
-        return innerText;
+        let innerTextCut = await innerText.substring(0, innerText.length-2);
+        let innerTextCutEdit = await innerTextCut.replace(',','.');
+        let stringToNumber = Number(innerTextCutEdit);
+        return stringToNumber;
     }
 }

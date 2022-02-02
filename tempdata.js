@@ -49,3 +49,9 @@ let value_m = value.replace(",", ".");
 console.log(value_m);
 let num = Number(value_m);
 console.log(num);
+
+let text = '109,89 €'
+let textm = text.replace(',','.')
+let textc = textm.substring(0, textm.length-2);
+let number = Number(textc);
+console.log(number);
