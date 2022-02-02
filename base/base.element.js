@@ -23,6 +23,7 @@ export default class BaseElement {
         return await this.wdioElement.isClickable();
     }
     async getText() {
-        return await this.wdioElement.getText();
+        let innerText = await this.wdioElement.getText();
+        return innerText;
     }
 }
