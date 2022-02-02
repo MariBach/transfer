@@ -9,8 +9,6 @@ describe('Login testing', () => {
         //Login page        
         await browser.switchToFrame(await $('iframe.signin-iframe'));
         await loginPage.login('bachinskaya.mari@gmail.com', 'Bainka');
-        //let elemIsExist = await loginPage.errMessageBox.isExisting();
-        //console.log(elemIsExist);
         await expect(loginPage.errMessageBox).toBeExisting();
     });
 });
