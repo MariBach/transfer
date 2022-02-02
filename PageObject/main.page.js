@@ -41,5 +41,12 @@ class MainPage extends BasePage {
     async checkSuccessfulLogIn(){
         await this.myAccountIcon.isExisting();
     }
+    async getProductPrice (){
+        let priceWithCur = await this.productPrice.getText();
+        let priceWoCur = await priceWithCur.substring(0, priceWithCur.length-2);
+        let priceFormat = await priceWoCur.replace(',','.');
+        let priceNumber = Number(priceFormat);
+        return priceNumber;
+    }
 }
 export default new MainPage();

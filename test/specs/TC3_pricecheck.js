@@ -11,6 +11,8 @@ describe ("Product price check", () => {
 
         await mainPage.inputSearchItem("Harry Potter");
         await mainPage.startSearch();
+        //await console.log(await mainPage.productPrice.getText());
+        await console.log(await mainPage.getProductPrice());
         await expect(mainPage.productPrice).toBeExisting();
     })
 })

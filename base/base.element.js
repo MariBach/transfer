@@ -23,10 +23,6 @@ export default class BaseElement {
         return await this.wdioElement.isClickable();
     }
     async getText() {
-        let innerText = await this.wdioElement.getText();
-        let innerTextCut = await innerText.substring(0, innerText.length-2);
-        let innerTextCutEdit = await innerTextCut.replace(',','.');
-        let stringToNumber = Number(innerTextCutEdit);
-        return stringToNumber;
+        return await this.wdioElement.getText();
     }
 }
