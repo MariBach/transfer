@@ -8,8 +8,10 @@ describe('Login testing', () => {
         await mainPage.open();
         await mainPage.signIn();                   
         //Open login page        
-        await browser.switchToFrame(await $('iframe.signin-iframe'));
+        await browser.switchToFrame(await loginPage.signInFrame);
         await loginPage.login(InputData.validMail, InputData.invalidPswd);
         await expect(loginPage.errMessageBox).toBeExisting();
     });
 });
+
+//await browser.switchToFrame(await $('iframe.signin-iframe'));

@@ -7,12 +7,12 @@ describe('Login testing', () => {
         //Open main page
         await mainPage.open();
         await mainPage.signIn();                   
-        //Open login page
-        
+        //Open login page        
         await browser.switchToFrame(await loginPage.signInFrame);        
-        //await browser.switchToFrame(await $('iframe.signin-iframe'));
         await loginPage.login(InputData.validMail, InputData.validPswd);       
         //User logged in, main page updated
         await expect(mainPage.myAccountIcon).toBeExisting(); 
     });
 });
+
+//await browser.switchToFrame(await $('iframe.signin-iframe'));
