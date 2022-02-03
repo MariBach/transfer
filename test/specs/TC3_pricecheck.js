@@ -1,5 +1,6 @@
 import loginPage from "../../PageObject/login.page.js";
 import mainPage from "../../PageObject/main.page.js";
+import inputdata from "../../PageObject/inputdata.js";
 import chai from "chai";
 
 const expect = chai.expect;
@@ -9,9 +10,9 @@ describe ("Product price check", () => {
         await mainPage.signIn();
 
         await browser.switchToFrame(await $('iframe.signin-iframe'));
-        await loginPage.login('bachinskaya.mari@gmail.com', 'Ba4inka');
+        await loginPage.login(inputdata.validMail, inputdata.validPswd);
 
-        await mainPage.inputSearchItem("Harry Potter");
+        await mainPage.inputSearchItem(inputdata.itemSearch);
         await mainPage.startSearch();
         //await console.log(await mainPage.productPrice.getText());
         //await console.log(await mainPage.getProductPrice());
