@@ -6,18 +6,22 @@ import Button from "../Elements/button.js";
 class LoginPage extends BasePage{
     //sign-in frame
         get signInFrame() {
-            return new BaseElement($('iframe.signin-iframe', "Sign-In Frame"));
+            let element = $('iframe.signin-iframe');
+            return element
+            //return new BaseElement($('iframe.signin-iframe'), "Sign-In Frame");
         }    
     //user credentials
-        get emailInput() {
-            return new Input($('//input[@type="email"]'), "Input email");
+        get emailInput() {            
+            return new Input ($('#ap_email'),"Input email");
+            //return new Input($('//input[@type="email"]'), "Input email");
         }
         get pswdInput() {
-        return new Input($('//input[@placeholder="Book Depository password"]'), "Password input");
+            return new Input ($('#ap_password'), "Password input");        
+            //return new Input($('//input[@placeholder="Book Depository password"]'), "Password input");
         }
     //button to Sign-In    
         get signInBtn() {
-        return new Button($('#signInSubmit'), "Sign-In");
+            return new Button($('#signInSubmit'), "Sign-In");
         }
     //notification about wrong input    
         get errMessageBox() {      

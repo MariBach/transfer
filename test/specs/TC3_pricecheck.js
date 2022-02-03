@@ -6,12 +6,13 @@ import chai from "chai";
 const expect = chai.expect;
 describe ("Product price check", () => {
     it ("Check if the product price less than 1000", async () => {
+        //Open main page
         await mainPage.open();
         await mainPage.signIn();
-
+        //open login page
         await browser.switchToFrame(await $('iframe.signin-iframe'));
         await loginPage.login(inputdata.validMail, inputdata.validPswd);
-
+        //Start search
         await mainPage.inputSearchItem(inputdata.itemSearch);
         await mainPage.startSearch();
         //await console.log(await mainPage.productPrice.getText());

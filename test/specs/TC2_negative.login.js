@@ -4,10 +4,10 @@ import InputData from "../../PageObject/inputdata.js";
 
 describe('Login testing', () => {
     it('Negative login testing', async() => {
-        //Main page
+        //Open main page
         await mainPage.open();
         await mainPage.signIn();                   
-        //Login page        
+        //Open login page        
         await browser.switchToFrame(await $('iframe.signin-iframe'));
         await loginPage.login(InputData.validMail, InputData.invalidPswd);
         await expect(loginPage.errMessageBox).toBeExisting();
